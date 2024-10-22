@@ -1,4 +1,4 @@
-module pingv2
+module github.com/theCompanyDream/pingtest/commands
 
 go 1.19
 

@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"net/http"
 	"log"
+	"github.com/theCompanyDream/pingtest/commands"
 )
 
 type CommandRequest struct {
