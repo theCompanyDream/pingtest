@@ -1,4 +1,4 @@
-module github.com/theCompanyDream/pingtest/commands
+module github.com/theCompanyDream/pingtest
 
 go 1.19
 
