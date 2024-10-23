@@ -38,7 +38,7 @@ func handlePing(w http.ResponseWriter, req *http.Request) {
 		http.Error(w, "Host parameter not found in query string", http.StatusBadRequest)
 		return
 	}
-	result, err := Ping(host)
+	result, err := commands.Ping(host)
 	if err != nil {
 		http.Error(w, "Error Running Ping Request", http.StatusBadRequest)
 		log.Printf("Error pinging server %v", err)
@@ -48,7 +48,7 @@ func handlePing(w http.ResponseWriter, req *http.Request) {
 }
 
 func handleGetSystemInfo(w http.ResponseWriter, req *http.Request) {
-	result, err := GetSystemInfo()
+	result, err := commands.GetSystemInfo()
 	if err != nil {
 		http.Error(w, "Error parsing query parameters", http.StatusBadRequest)
 		log.Printf("Error parsing query parameters: %v", err)

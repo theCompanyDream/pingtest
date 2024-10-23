@@ -28,6 +28,8 @@ func Ping(host string) (PingResult, error) {
 		return PingResult{}, err
 	}
 
+	pinger.SetPrivileged(false)
+
 	// Set the number of packets
 	pinger.Count = 4
 
