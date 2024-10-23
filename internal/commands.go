@@ -5,7 +5,6 @@ import (
 	"log"
 	"net"
 	"os"
-	"strings"
 	"time"
 
 	probing "github.com/prometheus-community/pro-bing"
@@ -54,17 +53,6 @@ func Ping(host string) (PingResult, error) {
 		Time:       elapsed,
 		Packets:    stats.PacketsRecv,
 	}, nil
-}
-
-// isValidHost validates the host string to prevent command injection
-func isValidHost(host string) bool {
-	// Simple validation: host should be a valid IP or domain name
-	if net.ParseIP(host) != nil {
-		return true
-	}
-	// Regex or more sophisticated validation can be added here
-	// For simplicity, ensure no spaces or special characters
-	return !strings.ContainsAny(host, " \t\n\r;|&`<>")
 }
 
 // Get system hostname and IP

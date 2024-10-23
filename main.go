@@ -5,7 +5,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/theCompanyDream/pingtest/commands"
+	"github.com/theCompanyDream/pingtest/cmd/internal"
 )
 
 type CommandRequest struct {
