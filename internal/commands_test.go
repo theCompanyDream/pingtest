@@ -1,5 +1,5 @@
 // commands_test.go
-package test
+package internal
 
 import (
 	"os"
