@@ -2,8 +2,9 @@ package main
 
 import (
 	"encoding/json"
-	"net/http"
 	"log"
+	"net/http"
+
 	"github.com/theCompanyDream/pingtest/commands"
 )
 
@@ -17,7 +18,7 @@ func main() {
 	mux := http.NewServeMux()
 
 	// Register the handlers
-	mux.HandleFunc("/ping", handlePing)            // Endpoint for ping
+	mux.HandleFunc("/ping", handlePing)      // Endpoint for ping
 	mux.HandleFunc("/", handleGetSystemInfo) // Endpoint for system info
 
 	// Set up the server with the mux
@@ -30,7 +31,6 @@ func main() {
 	log.Println("Server is running on port 8080...")
 	log.Fatal(server.ListenAndServe())
 }
-
 
 func handlePing(w http.ResponseWriter, req *http.Request) {
 	host := req.URL.Query().Get("host")

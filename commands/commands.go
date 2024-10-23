@@ -7,7 +7,8 @@ import (
 	"os"
 	"strings"
 	"time"
-	"github.com/prometheus-community/pro-bing"
+
+	probing "github.com/prometheus-community/pro-bing"
 )
 
 type PingResult struct {
@@ -28,7 +29,7 @@ func Ping(host string) (PingResult, error) {
 		return PingResult{}, err
 	}
 
-	pinger.SetPrivileged(false)
+	pinger.SetPrivileged(true)
 
 	// Set the number of packets
 	pinger.Count = 4
